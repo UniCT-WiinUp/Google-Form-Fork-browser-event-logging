@@ -84,3 +84,9 @@ Google-Form-Fork è gestito da un backend Python per il processamento dei dati e
 
 ## Demo:
 # Puoi visualizzare una demo del sistema [Qui](https://quiz.unict-forum.icu/)
+
+![Imgur](https://i.imgur.com/uLJJO2U.png)
+# Editor
+### Per entrare in editor clicca la matita in basso a destra e iniserisci come credenziali di accesso:
+#### email: test@gmail.com
+#### password: test

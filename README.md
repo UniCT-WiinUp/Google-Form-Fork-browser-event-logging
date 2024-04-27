@@ -83,4 +83,4 @@ Questo codice assicura che quando uno studente tenta di uscire dalla modalità s
 Google-Form-Fork è gestito da un backend Python per il processamento dei dati e un frontend HTML per l'interazione con gli utenti. Il backend si occupa di elaborare le risposte dei test e gestire il salvataggio dei dati nel database, mentre il frontend fornisce un'interfaccia intuitiva per la creazione e la gestione dei test.
 
 ## Demo:
-# Puoi visualizzare una demo del sistema [Qui]([URL_del_link](https://quiz.unict-forum.icu/)
+# Puoi visualizzare una demo del sistema [Qui](https://quiz.unict-forum.icu/)

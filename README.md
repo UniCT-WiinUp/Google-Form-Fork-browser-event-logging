@@ -1,4 +1,4 @@
-## Google-Form-Fork: Automatizza il Tuo Processo di Valutazione con Controllo Anti-Furbi
+## Google-Form-Fork: Automatizza il Tuo Processo di Valutazione con Controllo Anti-Copiaggio
 
 Google-Form-Fork è una piattaforma personalizzata basata su Google Forms, arricchita con l'integrazione degli eventi del browser per garantire un processo di valutazione affidabile e efficiente, con un occhio di riguardo per prevenire eventuali tentativi di frode da parte degli studenti.
 

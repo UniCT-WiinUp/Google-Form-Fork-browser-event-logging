@@ -32,14 +32,6 @@ Siamo entusiasti di annunciare il rilascio della versione 1.0.1 della nostra pia
 - **Riorganizzazione degli elementi**: Abbiamo cambiato alcune posizioni degli elementi sulla pagina per migliorare l'ergonomia e la facilità d'uso.
 - **Nuova disposizione dei campi**: I campi del form sono stati riordinati per rendere la compilazione più semplice e logica.
 
-## Come aggiornare
-
-Per aggiornare alla versione 1.0.1, segui questi semplici passaggi:
-
-1. **Clone** o **pull** l'ultima versione del repository:
-   ```bash
-   git pull origin main
-
 
 ```javascript
 <input type="hidden" id="fullscreenExit" name="fullscreen_exit" value="0">

@@ -14,6 +14,33 @@ Google-Form-Fork è una piattaforma personalizzata basata su Google Forms, arric
 
 Il codice JavaScript integrato in Google-Form-Fork gestisce intelligentemente gli eventi del browser per garantire un ambiente di test sicuro. Quando uno studente tenta di uscire dalla modalità schermo intero durante il test, viene immediatamente segnalato, preservando l'integrità del processo di valutazione.
 
+# Aggiornamento Google Forms Fork - Versione 1.0.1
+
+Siamo entusiasti di annunciare il rilascio della versione 1.0.1 della nostra piattaforma Google Forms Fork! Questa versione include una serie di miglioramenti significativi per offrire una migliore esperienza utente e un'interfaccia più moderna.
+
+## Miglioramenti in questa versione
+
+### 1. Estetica e Template
+- **Nuovo design moderno**: Abbiamo aggiornato il template per renderlo più accattivante e allineato con gli standard attuali di design.
+- **Miglioramento della UI**: Sono stati fatti vari aggiustamenti per migliorare l'interfaccia utente e rendere la navigazione più intuitiva.
+
+### 2. Linguaggio dell'algoritmo
+- **Ottimizzazione del codice**: Il linguaggio dell'algoritmo è stato rivisitato e migliorato per garantire una maggiore efficienza e velocità di esecuzione.
+- **Pulizia del codice**: Sono stati eliminati bug e ridondanze, rendendo il codice più pulito e facile da mantenere.
+
+### 3. Posizionamento degli elementi
+- **Riorganizzazione degli elementi**: Abbiamo cambiato alcune posizioni degli elementi sulla pagina per migliorare l'ergonomia e la facilità d'uso.
+- **Nuova disposizione dei campi**: I campi del form sono stati riordinati per rendere la compilazione più semplice e logica.
+
+## Come aggiornare
+
+Per aggiornare alla versione 1.0.1, segui questi semplici passaggi:
+
+1. **Clone** o **pull** l'ultima versione del repository:
+   ```bash
+   git pull origin main
+
+
 ```javascript
 <input type="hidden" id="fullscreenExit" name="fullscreen_exit" value="0">
 $(document).ready(function() {

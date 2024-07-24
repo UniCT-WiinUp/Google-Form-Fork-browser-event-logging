@@ -20,31 +20,28 @@ Il codice JavaScript integrato in Google-Form-Fork gestisce intelligentemente gl
 <input type="hidden" id="fullscreenExit" name="fullscreen_exit" value="0">
 
 $(document).ready(function() {
-    var isQuizSubmitted = false; // Flag per controllare se il quiz è stato inviato
+    var isQuizSubmitted = false;
+    var fullscreenExitValue = '0';
 
-    // Funzione per attivare la modalità schermo intero
     function enterFullscreen() {
         var elem = document.documentElement;
         if (elem.requestFullscreen) {
             elem.requestFullscreen();
-        } else if (elem.webkitRequestFullscreen) { /* Safari */
+        } else if (elem.webkitRequestFullscreen) {
             elem.webkitRequestFullscreen();
-        } else if (elem.msRequestFullscreen) { /* IE11 */
+        } else if (elem.msRequestFullscreen) {
             elem.msRequestFullscreen();
         }
     }
 
-    // Funzione per bloccare l'interazione con gli elementi della pagina
     function disablePageInteraction() {
         $('body').css('pointer-events', 'none');
     }
 
-    // Funzione per riattivare l'interazione con gli elementi della pagina
     function enablePageInteraction() {
         $('body').css('pointer-events', '');
     }
 
-    // Funzione per mostrare il messaggio di uscita da schermo intero
     function showFullscreenMessage() {
         $('#fullscreenMessage').fadeIn();
         setTimeout(function() {
@@ -52,31 +49,35 @@ $(document).ready(function() {
         }, 9000);
     }
 
-    // Gestore di eventi per il pulsante "Inizia Quiz"
     $('#startQuizBtn').click(function() {
-        enterFullscreen(); // Attiva la modalità schermo intero
-        $('#quizForm').show(); // Mostra il modulo del quiz dopo aver fatto clic sul pulsante
+        enterFullscreen();
+        $('#quizForm').show();
     });
 
-    // Monitora il cambio di stato della modalità schermo intero
     document.addEventListener('fullscreenchange', function() {
-        if (!document.fullscreenElement) { // Se l'utente esce dalla modalità schermo intero
-            showFullscreenMessage(); // Mostra il messaggio di uscita da schermo intero
-            $('#fullscreenExit').val("1"); // Imposta il valore del campo nascosto
+        if (!document.fullscreenElement) {
+            showFullscreenMessage();
+            fullscreenExitValue = '1';
+            console.log(fullscreenExitValue);
+
+            // Invio il valore di uscita dal fullscreen al backend
+            $.ajax({
+                url: '/save_fullscreen_exit',
+                method: 'POST',
+                data: {
+                    fullscreen_exit: fullscreenExitValue
+                },
+                success: function(response) {
+                    console.log('Fullscreen exit saved:', response);
+                }
+            });
         }
     });
 
-    // Gestore di eventi per il submit del quiz
     $('#quizForm').submit(function() {
-        isQuizSubmitted = true; // Imposta il flag per indicare che il quiz è stato inviato
-        // Inserisci qui il codice per salvare il valore nel database
-        // Rimuovi il commento e sostituisci 'URL_DEL_DATABASE' con l'URL del tuo script PHP per salvare nel database
-        /*
-        $.post('URL_DEL_DATABASE', { fullscreen_exit: $('#fullscreenExit').val() }, function(response) {
-            console.log(response); // Puoi fare qualcosa con la risposta dal server
-        });
-        */
-        return true; // Invia il modulo
+        isQuizSubmitted = true;
+        $('#fullscreenExit').val(fullscreenExitValue);
+        return true;
     });
 });
 ```
